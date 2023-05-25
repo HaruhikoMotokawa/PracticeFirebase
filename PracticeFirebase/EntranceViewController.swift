@@ -6,8 +6,11 @@
 //
 import UIKit
 import FirebaseAuth
+import AuthenticationServices
 
 class EntranceViewController: UIViewController {
+
+
 
     @IBOutlet weak var conditionLabel: UILabel!
 
@@ -16,6 +19,11 @@ class EntranceViewController: UIViewController {
     @IBAction func goSingAndClear(_ sender: Any) {
         resultLabel.text = "😄"
         conditionLabel.text = "ログイン状況"
+    }
+
+
+    @IBAction func appleSignIn(_ sender: Any) {
+        AccountManager.shared.startSignInWithAppleFlow()
     }
 
     @IBAction func goCreateAndClear(_ sender: Any) {

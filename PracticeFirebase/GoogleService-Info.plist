@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>978942323243-p1dm2d0e8iadbm8b0b9rq9t4a135ajdi.apps.googleusercontent.com</string>
+	<string>978942323243-m35hs6b2o24s063n2bf55nroouaeq67u.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.978942323243-p1dm2d0e8iadbm8b0b9rq9t4a135ajdi</string>
+	<string>com.googleusercontent.apps.978942323243-m35hs6b2o24s063n2bf55nroouaeq67u</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCPOP-HlmTbgJ8TFu5ESgzlbR5zQlUC5EQ</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,22 +13,22 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.motoharu.PracticeFirebase</string>
+	<string>ComMotoharuPracticeFirebase</string>
 	<key>PROJECT_ID</key>
 	<string>practicefirebase-7ef4b</string>
 	<key>STORAGE_BUCKET</key>
 	<string>practicefirebase-7ef4b.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:978942323243:ios:665d2c5801300f879a986e</string>
+	<string>1:978942323243:ios:d3b209e78f96c8669a986e</string>
 </dict>
 </plist>
