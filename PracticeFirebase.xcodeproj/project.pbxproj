@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		784B38352A1B94720036F908 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784B38342A1B94720036F908 /* AppDelegate.swift */; };
 		784B38372A1B94720036F908 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784B38362A1B94720036F908 /* SceneDelegate.swift */; };
-		784B38392A1B94720036F908 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784B38382A1B94720036F908 /* ViewController.swift */; };
+		784B38392A1B94720036F908 /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784B38382A1B94720036F908 /* CreateUserViewController.swift */; };
 		784B383C2A1B94720036F908 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 784B383A2A1B94720036F908 /* Main.storyboard */; };
 		784B383E2A1B94720036F908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 784B383D2A1B94720036F908 /* Assets.xcassets */; };
 		784B38412A1B94720036F908 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 784B383F2A1B94720036F908 /* LaunchScreen.storyboard */; };
 		784B38492A1C5E230036F908 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 784B38482A1C5E230036F908 /* GoogleService-Info.plist */; };
+		78DA96C52A1DBF2500D3FD30 /* EntranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA96C42A1DBF2500D3FD30 /* EntranceViewController.swift */; };
+		78DA96C72A1DC3AF00D3FD30 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA96C62A1DC3AF00D3FD30 /* SignInViewController.swift */; };
 		FE971347534F61DA66128586 /* Pods_PracticeFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5E03EB7CE530CF74E267FA /* Pods_PracticeFirebase.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,12 +25,14 @@
 		784B38312A1B94720036F908 /* PracticeFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracticeFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		784B38342A1B94720036F908 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		784B38362A1B94720036F908 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		784B38382A1B94720036F908 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		784B38382A1B94720036F908 /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 		784B383B2A1B94720036F908 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		784B383D2A1B94720036F908 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		784B38402A1B94720036F908 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		784B38422A1B94720036F908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		784B38482A1C5E230036F908 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		78DA96C42A1DBF2500D3FD30 /* EntranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceViewController.swift; sourceTree = "<group>"; };
+		78DA96C62A1DC3AF00D3FD30 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		B20B116D27A3E0328BD95523 /* Pods-PracticeFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PracticeFirebase.release.xcconfig"; path = "Target Support Files/Pods-PracticeFirebase/Pods-PracticeFirebase.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,7 +71,9 @@
 			children = (
 				784B38342A1B94720036F908 /* AppDelegate.swift */,
 				784B38362A1B94720036F908 /* SceneDelegate.swift */,
-				784B38382A1B94720036F908 /* ViewController.swift */,
+				78DA96C42A1DBF2500D3FD30 /* EntranceViewController.swift */,
+				784B38382A1B94720036F908 /* CreateUserViewController.swift */,
+				78DA96C62A1DC3AF00D3FD30 /* SignInViewController.swift */,
 				784B383A2A1B94720036F908 /* Main.storyboard */,
 				784B383D2A1B94720036F908 /* Assets.xcassets */,
 				784B383F2A1B94720036F908 /* LaunchScreen.storyboard */,
@@ -83,7 +89,6 @@
 				360D00C7C5EB36B51C665C3F /* Pods-PracticeFirebase.debug.xcconfig */,
 				B20B116D27A3E0328BD95523 /* Pods-PracticeFirebase.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -106,7 +111,7 @@
 				784B382D2A1B94720036F908 /* Sources */,
 				784B382E2A1B94720036F908 /* Frameworks */,
 				784B382F2A1B94720036F908 /* Resources */,
-				56B47BCBE8A379FFB2C96936 /* [CP] Embed Pods Frameworks */,
+				FA6F1FEF3E93E486940A5C1D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -165,23 +170,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		56B47BCBE8A379FFB2C96936 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PracticeFirebase/Pods-PracticeFirebase-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PracticeFirebase/Pods-PracticeFirebase-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PracticeFirebase/Pods-PracticeFirebase-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C88ECE25E183F83B0686510F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -204,6 +192,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FA6F1FEF3E93E486940A5C1D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PracticeFirebase/Pods-PracticeFirebase-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PracticeFirebase/Pods-PracticeFirebase-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PracticeFirebase/Pods-PracticeFirebase-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -211,8 +216,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				784B38392A1B94720036F908 /* ViewController.swift in Sources */,
+				78DA96C52A1DBF2500D3FD30 /* EntranceViewController.swift in Sources */,
+				784B38392A1B94720036F908 /* CreateUserViewController.swift in Sources */,
 				784B38352A1B94720036F908 /* AppDelegate.swift in Sources */,
+				78DA96C72A1DC3AF00D3FD30 /* SignInViewController.swift in Sources */,
 				784B38372A1B94720036F908 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,6 +376,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -398,6 +406,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
