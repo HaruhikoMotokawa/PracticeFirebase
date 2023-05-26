@@ -18,6 +18,11 @@
 		78DA96CA2A1F414000D3FD30 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA96C92A1F414000D3FD30 /* AccountManager.swift */; };
 		78DA96D02A1F4E4E00D3FD30 /* SignInWithAppleIDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA96CF2A1F4E4E00D3FD30 /* SignInWithAppleIDButton.swift */; };
 		78DA96D32A1F629600D3FD30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78DA96D22A1F629600D3FD30 /* GoogleService-Info.plist */; };
+		78DA96D52A20811A00D3FD30 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA96D42A20811A00D3FD30 /* ListViewController.swift */; };
+		78DA96D72A20845D00D3FD30 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA96D62A20845D00D3FD30 /* ItemModel.swift */; };
+		78DA96DC2A209AC700D3FD30 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA96DB2A209AC700D3FD30 /* AddItemViewController.swift */; };
+		78DA96DF2A20AAC700D3FD30 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA96DD2A20AAC700D3FD30 /* CustomTableViewCell.swift */; };
+		78DA96E02A20AAC700D3FD30 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78DA96DE2A20AAC700D3FD30 /* CustomTableViewCell.xib */; };
 		FE971347534F61DA66128586 /* Pods_PracticeFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5E03EB7CE530CF74E267FA /* Pods_PracticeFirebase.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +44,11 @@
 		78DA96CF2A1F4E4E00D3FD30 /* SignInWithAppleIDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleIDButton.swift; sourceTree = "<group>"; };
 		78DA96D12A1F611800D3FD30 /* PracticeFirebaseDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PracticeFirebaseDebug.entitlements; sourceTree = "<group>"; };
 		78DA96D22A1F629600D3FD30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		78DA96D42A20811A00D3FD30 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		78DA96D62A20845D00D3FD30 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		78DA96DB2A209AC700D3FD30 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		78DA96DD2A20AAC700D3FD30 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		78DA96DE2A20AAC700D3FD30 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		B20B116D27A3E0328BD95523 /* Pods-PracticeFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PracticeFirebase.release.xcconfig"; path = "Target Support Files/Pods-PracticeFirebase/Pods-PracticeFirebase.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,20 +87,49 @@
 			children = (
 				78DA96D12A1F611800D3FD30 /* PracticeFirebaseDebug.entitlements */,
 				78DA96C82A1F30D000D3FD30 /* PracticeFirebase.entitlements */,
-				784B38342A1B94720036F908 /* AppDelegate.swift */,
-				784B38362A1B94720036F908 /* SceneDelegate.swift */,
+				78DA96D92A20859B00D3FD30 /* Delegate */,
+				78DA96D82A20856800D3FD30 /* AccountView */,
+				78DA96C92A1F414000D3FD30 /* AccountManager.swift */,
+				78DA96D42A20811A00D3FD30 /* ListViewController.swift */,
+				78DA96D62A20845D00D3FD30 /* ItemModel.swift */,
+				784B383A2A1B94720036F908 /* Main.storyboard */,
+				78DA96DB2A209AC700D3FD30 /* AddItemViewController.swift */,
+				78DA96DD2A20AAC700D3FD30 /* CustomTableViewCell.swift */,
+				78DA96DE2A20AAC700D3FD30 /* CustomTableViewCell.xib */,
+				784B383F2A1B94720036F908 /* LaunchScreen.storyboard */,
+				784B38422A1B94720036F908 /* Info.plist */,
+				78DA96D22A1F629600D3FD30 /* GoogleService-Info.plist */,
+				78DA96DA2A2085CF00D3FD30 /* others */,
+			);
+			path = PracticeFirebase;
+			sourceTree = "<group>";
+		};
+		78DA96D82A20856800D3FD30 /* AccountView */ = {
+			isa = PBXGroup;
+			children = (
+				78DA96CF2A1F4E4E00D3FD30 /* SignInWithAppleIDButton.swift */,
 				78DA96C42A1DBF2500D3FD30 /* EntranceViewController.swift */,
 				784B38382A1B94720036F908 /* CreateUserViewController.swift */,
 				78DA96C62A1DC3AF00D3FD30 /* SignInViewController.swift */,
-				78DA96C92A1F414000D3FD30 /* AccountManager.swift */,
-				78DA96CF2A1F4E4E00D3FD30 /* SignInWithAppleIDButton.swift */,
-				78DA96D22A1F629600D3FD30 /* GoogleService-Info.plist */,
-				784B383A2A1B94720036F908 /* Main.storyboard */,
-				784B383D2A1B94720036F908 /* Assets.xcassets */,
-				784B383F2A1B94720036F908 /* LaunchScreen.storyboard */,
-				784B38422A1B94720036F908 /* Info.plist */,
 			);
-			path = PracticeFirebase;
+			path = AccountView;
+			sourceTree = "<group>";
+		};
+		78DA96D92A20859B00D3FD30 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				784B38342A1B94720036F908 /* AppDelegate.swift */,
+				784B38362A1B94720036F908 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		78DA96DA2A2085CF00D3FD30 /* others */ = {
+			isa = PBXGroup;
+			children = (
+				784B383D2A1B94720036F908 /* Assets.xcassets */,
+			);
+			path = others;
 			sourceTree = "<group>";
 		};
 		AF6C156EAD87199E4C4BFB71 /* Pods */ = {
@@ -173,6 +212,7 @@
 				784B38412A1B94720036F908 /* LaunchScreen.storyboard in Resources */,
 				78DA96D32A1F629600D3FD30 /* GoogleService-Info.plist in Resources */,
 				784B383E2A1B94720036F908 /* Assets.xcassets in Resources */,
+				78DA96E02A20AAC700D3FD30 /* CustomTableViewCell.xib in Resources */,
 				784B383C2A1B94720036F908 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,10 +268,14 @@
 			files = (
 				78DA96D02A1F4E4E00D3FD30 /* SignInWithAppleIDButton.swift in Sources */,
 				78DA96C52A1DBF2500D3FD30 /* EntranceViewController.swift in Sources */,
+				78DA96DF2A20AAC700D3FD30 /* CustomTableViewCell.swift in Sources */,
 				784B38392A1B94720036F908 /* CreateUserViewController.swift in Sources */,
+				78DA96D72A20845D00D3FD30 /* ItemModel.swift in Sources */,
 				784B38352A1B94720036F908 /* AppDelegate.swift in Sources */,
+				78DA96DC2A209AC700D3FD30 /* AddItemViewController.swift in Sources */,
 				78DA96C72A1DC3AF00D3FD30 /* SignInViewController.swift in Sources */,
 				784B38372A1B94720036F908 /* SceneDelegate.swift in Sources */,
+				78DA96D52A20811A00D3FD30 /* ListViewController.swift in Sources */,
 				78DA96CA2A1F414000D3FD30 /* AccountManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
