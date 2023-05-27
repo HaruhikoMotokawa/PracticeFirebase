@@ -17,13 +17,12 @@ class AddItemViewController: UIViewController {
 
     @IBOutlet weak var unitTextField: UITextField!
 
-   
+
 
     let db = Firestore.firestore()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
     }
     

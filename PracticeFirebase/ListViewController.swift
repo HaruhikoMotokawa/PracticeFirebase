@@ -10,8 +10,9 @@ import FirebaseFirestore
 
 class ListViewController: UIViewController {
 
+    var itemListener: ListenerRegistration?
 
-    let db = Firestore.firestore()
+    let fireStore = Firestore.firestore()
 
     var itemModelList: [ItemModel] = []
 
@@ -29,8 +30,27 @@ class ListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        fireStore.collection("users").addSnapshotListener { [weak self] (querySnapshot, err) in
+            guard let sSelf = self else { return }
+            if err != nil {
+                print("データ取得に失敗")
+            } else {
+                sSelf.itemModelList = querySnapshot!.documents.map{ item -> ItemModel in
+                    let data = item.data()
+                    return ItemModel(name: data["name"] as! String,
+                                     number: data["number"] as! String,
+                                     unit: data["unit"] as! String)
+                }
 
-        itemList.reloadData()
+                sSelf.itemList.reloadData()
+            }
+        }
+    }
+
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear( animated )
+        if let mUnsubscribe = itemListener { mUnsubscribe.remove() }
     }
 
     @IBAction func sharedItem(_ sender: Any) {

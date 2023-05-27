@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 struct ItemModel {
 
     var name: String
     var number: String
     var unit: String
+
 }
