@@ -12,8 +12,6 @@ class ListViewController: UIViewController {
 
     var itemListener: ListenerRegistration?
 
-    let fireStore = Firestore.firestore()
-
     var itemModelList: [ItemModel] = []
 
     @IBOutlet weak var itemList: UITableView!
@@ -23,15 +21,14 @@ class ListViewController: UIViewController {
         itemList.dataSource = self
         itemList.delegate = self
 
-        itemList.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
+        itemList.register(UINib(nibName: "CustomTableViewCell", bundle: nil),
+                          forCellReuseIdentifier: "CustomTableViewCell")
 
-    }
+       itemListener = Firestore.firestore().collection("users")
+            .addSnapshotListener { [weak self] (querySnapshot, err) in
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        fireStore.collection("users").addSnapshotListener { [weak self] (querySnapshot, err) in
             guard let sSelf = self else { return }
+
             if err != nil {
                 print("データ取得に失敗")
             } else {
@@ -41,13 +38,10 @@ class ListViewController: UIViewController {
                                      number: data["number"] as! String,
                                      unit: data["unit"] as! String)
                 }
-
                 sSelf.itemList.reloadData()
             }
         }
     }
-
-
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear( animated )
         if let mUnsubscribe = itemListener { mUnsubscribe.remove() }
@@ -68,11 +62,19 @@ extension ListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
+
         let itemModelList = itemModelList[indexPath.row]
         cell.setItem(name: itemModelList.name, number: itemModelList.number, unit: itemModelList.unit)
         return cell
     }
 }
 
-extension ListViewController: UITableViewDelegate {}
+extension ListViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Firestore.firestore().collection("users").document("[document]").delete()
+
+    }
+}
