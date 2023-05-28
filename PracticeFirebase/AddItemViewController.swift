@@ -28,7 +28,7 @@ class AddItemViewController: UIViewController {
     
 
     @IBAction func addItem(_ sender: Any) {
-        guard let id = UIDevice.current.identifierForVendor?.uuidString else { return }
+        guard (UIDevice.current.identifierForVendor?.uuidString) != nil else { return }
 
         db.collection("users").addDocument(data: [
             "name": nameTextField.text ?? "",

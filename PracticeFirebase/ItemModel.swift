@@ -7,11 +7,11 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
-struct ItemModel {
-
+struct ItemModel: Codable {
+    @DocumentID var id: String?
     var name: String
     var number: String
     var unit: String
-
 }

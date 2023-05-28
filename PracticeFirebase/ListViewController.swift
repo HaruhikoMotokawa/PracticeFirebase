@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class ListViewController: UIViewController {
 
@@ -34,7 +35,8 @@ class ListViewController: UIViewController {
             } else {
                 sSelf.itemModelList = querySnapshot!.documents.map{ item -> ItemModel in
                     let data = item.data()
-                    return ItemModel(name: data["name"] as! String,
+                    return ItemModel(id: item.documentID,
+                                     name: data["name"] as! String,
                                      number: data["number"] as! String,
                                      unit: data["unit"] as! String)
                 }
@@ -42,6 +44,7 @@ class ListViewController: UIViewController {
             }
         }
     }
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear( animated )
         if let mUnsubscribe = itemListener { mUnsubscribe.remove() }
@@ -74,7 +77,17 @@ extension ListViewController: UITableViewDataSource {
 extension ListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        Firestore.firestore().collection("users").document("[document]").delete()
-
+        // 選択されたセルのインデックスを取得
+        let selectedRowIndex = indexPath.row
+        // 選択されたセルに対応するドキュメントIDを取得
+        let documentID = itemModelList[selectedRowIndex].id ?? ""
+        // ドキュメントを参照して削除する
+        Firestore.firestore().collection("users").document(documentID).delete() { err in
+            if let err = err {
+                print("Error removing document: \\(err)")
+            } else {
+                print("Document successfully removed!")
+            }
+        }
     }
 }
