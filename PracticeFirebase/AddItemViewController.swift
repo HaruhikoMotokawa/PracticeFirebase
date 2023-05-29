@@ -7,6 +7,8 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseFirestoreSwift
+import FirebaseAuth
 
 class AddItemViewController: UIViewController {
 
@@ -17,10 +19,6 @@ class AddItemViewController: UIViewController {
 
     @IBOutlet weak var unitTextField: UITextField!
 
-
-
-    let db = Firestore.firestore()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,29 +28,23 @@ class AddItemViewController: UIViewController {
     @IBAction func addItem(_ sender: Any) {
         guard (UIDevice.current.identifierForVendor?.uuidString) != nil else { return }
 
-        db.collection("users").addDocument(data: [
-            "name": nameTextField.text ?? "",
-            "number": numberTextField.text ?? "",
-            "unit": unitTextField.text ?? ""
-        ]) { error in
-            DispatchQueue.main.async {
-                if let error = error {
-                    print("Error writing document: \(error)")
-                } else {
-                    self.nameTextField.text = ""
+        if let user = Auth.auth().currentUser {
+            Firestore.firestore().collection("shoppingItem").addDocument(data: [
+                "name": nameTextField.text ?? "",
+                "number": numberTextField.text ?? "",
+                "unit": unitTextField.text ?? "",
+                "user": user.uid,
+                "date": Date()
+            ]) { error in
+                DispatchQueue.main.async {
+                    if let error = error {
+                        print("Error writing document: \(error)")
+                    } else {
+                        self.nameTextField.text = ""
+                    }
                 }
             }
+            dismiss(animated: true)
         }
-        dismiss(animated: true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

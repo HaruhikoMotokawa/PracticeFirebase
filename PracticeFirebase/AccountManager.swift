@@ -91,9 +91,6 @@ class AccountManager: NSObject {
             authorizationController.delegate = self
             authorizationController.presentationContextProvider = self
             authorizationController.performRequests()
-
-
-
     }
 
 }

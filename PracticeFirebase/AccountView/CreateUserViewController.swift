@@ -7,19 +7,22 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
+import FirebaseFirestoreSwift
+
 
 class CreateUserViewController: UIViewController {
 
-
+    @IBOutlet weak var userNameTextField: UITextField!
+    
     @IBOutlet weak var email: UITextField!
 
-
     @IBOutlet weak var password: UITextField!
-
 
     @IBOutlet weak var resultLabel: UILabel!
 
     @IBAction func isClear(_ sender: Any) {
+        userNameTextField.text = ""
         email.text = ""
         password.text = ""
         resultLabel.backgroundColor = UIColor.clear
@@ -59,6 +62,28 @@ class CreateUserViewController: UIViewController {
                 strongSelf.dismiss(animated: true)
                 print("登録完了")
             }
+            strongSelf.createFirestoreOfUser()
+        }
+    }
+
+    // FireStoreにユーザー情報を登録
+    func createFirestoreOfUser() {
+        if let user = Auth.auth().currentUser {
+            Firestore.firestore().collection("users").document(user.uid).setData([
+                "name": userNameTextField.text ?? "",
+                "email": email.text ?? "",
+                "password": password.text ?? "",
+                "date": Date()
+
+            ],completion: { error in
+                DispatchQueue.main.async {
+                    if let error = error {
+                        print("Error writing document: \(error)")
+                    } else {
+                        self.userNameTextField.text = ""
+                    }
+                }
+            })
         }
     }
 
@@ -70,7 +95,6 @@ class CreateUserViewController: UIViewController {
     func closeKeyboard() {
         //inputAccesoryViewに入れるtoolbar
         let toolbar = UIToolbar()
-
         //完了ボタンを右寄せにする為に、左側を埋めるスペース作成
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
                                     target: nil,
@@ -80,15 +104,12 @@ class CreateUserViewController: UIViewController {
                                    style: .done,
                                    target: self,
                                    action: #selector(didTapDoneButton))
-
         //toolbarのitemsに作成したスペースと完了ボタンを入れる。実際にも左から順に表示されます。
         toolbar.items = [space, done]
         toolbar.sizeToFit()
-
         //作成したtoolbarをtextFieldのinputAccessoryViewに入れる
         email.inputAccessoryView = toolbar
         password.inputAccessoryView = toolbar
-
     }
     //完了ボタンを押した時の処理
     @objc func didTapDoneButton() {
@@ -96,5 +117,4 @@ class CreateUserViewController: UIViewController {
         password.resignFirstResponder()
     }
 }
-
 

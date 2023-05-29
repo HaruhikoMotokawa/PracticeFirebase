@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import FirebaseAuth
 
 class ListViewController: UIViewController {
 
@@ -25,24 +26,29 @@ class ListViewController: UIViewController {
         itemList.register(UINib(nibName: "CustomTableViewCell", bundle: nil),
                           forCellReuseIdentifier: "CustomTableViewCell")
 
-       itemListener = Firestore.firestore().collection("users")
+        guard Auth.auth().currentUser != nil else { return }
+        itemListener = Firestore.firestore().collection("shoppingItem")
             .addSnapshotListener { [weak self] (querySnapshot, err) in
 
-            guard let sSelf = self else { return }
+                guard let sSelf = self else { return }
 
-            if err != nil {
-                print("データ取得に失敗")
-            } else {
-                sSelf.itemModelList = querySnapshot!.documents.map{ item -> ItemModel in
-                    let data = item.data()
-                    return ItemModel(id: item.documentID,
-                                     name: data["name"] as! String,
-                                     number: data["number"] as! String,
-                                     unit: data["unit"] as! String)
+                if err != nil {
+                    print("データ取得に失敗")
+                } else {
+                    if let querySnapshot = querySnapshot {
+                        sSelf.itemModelList = querySnapshot.documents.map{ item -> ItemModel in
+                            let data = item.data()
+                            return ItemModel(id: item.documentID,
+                                             name: data["name"] as? String ?? "",
+                                             number: data["number"] as? String ?? "",
+                                             unit: data["unit"] as? String ?? "")
+                        }
+                        sSelf.itemList.reloadData()
+                    } else {
+                        print("現在データはありません")
+                    }
                 }
-                sSelf.itemList.reloadData()
             }
-        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -56,7 +62,6 @@ class ListViewController: UIViewController {
 
     @IBAction func addItem(_ sender: Any) {
     }
-
 }
 
 extension ListViewController: UITableViewDataSource {
@@ -82,8 +87,8 @@ extension ListViewController: UITableViewDelegate {
         // 選択されたセルに対応するドキュメントIDを取得
         let documentID = itemModelList[selectedRowIndex].id ?? ""
         // ドキュメントを参照して削除する
-        Firestore.firestore().collection("users").document(documentID).delete() { err in
-            if let err = err {
+        Firestore.firestore().collection("shoppingItem").document(documentID).delete() { err in
+            if err != nil {
                 print("Error removing document: \\(err)")
             } else {
                 print("Document successfully removed!")
