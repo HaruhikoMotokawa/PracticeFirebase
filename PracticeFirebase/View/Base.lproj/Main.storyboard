@@ -106,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7C5-7T-GCQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1625" y="-638"/>
+            <point key="canvasLocation" x="-1694" y="-1046"/>
         </scene>
         <!--Create User View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -218,7 +218,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-627" y="-638"/>
+            <point key="canvasLocation" x="-553" y="-1046"/>
         </scene>
         <!--リスト-->
         <scene sceneID="byk-GQ-idO">
@@ -282,7 +282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5M-IZ-IG4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1659" y="-1440"/>
+            <point key="canvasLocation" x="-1695" y="-1759"/>
         </scene>
         <!--Add Item View Controller-->
         <scene sceneID="aqR-h8-9Dd">
@@ -377,7 +377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sw5-3g-Ah9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-543" y="-1440"/>
+            <point key="canvasLocation" x="-553" y="-1759"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="R9V-cw-yVY">
@@ -391,11 +391,130 @@
                     <connections>
                         <segue destination="oFe-GA-eEI" kind="relationship" relationship="viewControllers" id="GlY-FF-pn7"/>
                         <segue destination="iKP-xv-8aX" kind="relationship" relationship="viewControllers" id="Dwx-H8-nOG"/>
+                        <segue destination="fMm-NB-dAO" kind="relationship" relationship="viewControllers" id="P5c-yt-1CF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S1h-3J-mAP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3039" y="-1046"/>
+        </scene>
+        <!--共有相手登録-->
+        <scene sceneID="ZDt-cJ-H0z">
+            <objects>
+                <viewController id="fMm-NB-dAO" customClass="SharedUsersViewController" customModule="PracticeFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wCq-ue-vNk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="sDp-BW-PDY" userLabel="全体">
+                                <rect key="frame" x="10" y="109" width="373" height="310"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="C13-Uc-t2h" userLabel="シェア１">
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="20.333333333333332"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="シェア１" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LD2-Ce-PKE">
+                                                <rect key="frame" x="0.0" y="0.0" width="249" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在登録なし" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKI-eF-JKq">
+                                                <rect key="frame" x="269" y="0.0" width="104" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1s5-EU-Ywa" userLabel="シェア２">
+                                        <rect key="frame" x="0.0" y="50.333333333333343" width="373" height="20.333333333333329"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="シェア２" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kng-8H-c0M">
+                                                <rect key="frame" x="0.0" y="0.0" width="249" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在登録なし" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMi-0r-REc">
+                                                <rect key="frame" x="269" y="0.0" width="104" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hmp-0Q-VqO" userLabel="シェア３">
+                                        <rect key="frame" x="0.0" y="100.66666666666666" width="373" height="20.333333333333329"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="シェア３" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSN-cY-B28">
+                                                <rect key="frame" x="0.0" y="0.0" width="249" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在登録なし" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEg-Vd-8UK">
+                                                <rect key="frame" x="269" y="0.0" width="104" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8yg-4H-V6d" userLabel="入力">
+                                        <rect key="frame" x="0.0" y="151" width="373" height="30.333333333333343"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UID入力" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92M-Jh-vSm">
+                                                <rect key="frame" x="0.0" y="0.0" width="63" height="30.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Grc-aT-k8l">
+                                                <rect key="frame" x="83" y="0.0" width="290" height="30.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCU-2w-mxY">
+                                        <rect key="frame" x="0.0" y="211.33333333333331" width="373" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="追加"/>
+                                        <connections>
+                                            <action selector="addSharedUsers:" destination="fMm-NB-dAO" eventType="touchUpInside" id="sv3-5v-miW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1X-0O-D1W">
+                                        <rect key="frame" x="0.0" y="275.66666666666669" width="373" height="34.333333333333314"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="共有相手確認"/>
+                                        <connections>
+                                            <action selector="confirmationSharedUsers:" destination="fMm-NB-dAO" eventType="touchUpInside" id="GWF-Pl-npW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jdu-yU-s0r"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sDp-BW-PDY" firstAttribute="leading" secondItem="jdu-yU-s0r" secondAttribute="leading" constant="10" id="Vj0-SS-tIx"/>
+                            <constraint firstItem="jdu-yU-s0r" firstAttribute="bottom" secondItem="sDp-BW-PDY" secondAttribute="bottom" constant="350" id="a6c-MF-ujf"/>
+                            <constraint firstItem="sDp-BW-PDY" firstAttribute="top" secondItem="jdu-yU-s0r" secondAttribute="top" constant="50" id="hmE-hA-OnF"/>
+                            <constraint firstItem="jdu-yU-s0r" firstAttribute="trailing" secondItem="sDp-BW-PDY" secondAttribute="trailing" constant="10" id="xJd-oR-0tv"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="共有相手登録" image="shareplay" catalog="system" selectedImage="shareplay" id="xeg-UZ-sBw"/>
+                    <connections>
+                        <outlet property="firstSharedUsersLabel" destination="NKI-eF-JKq" id="9Va-Ph-gHK"/>
+                        <outlet property="inputUIDTextField" destination="Grc-aT-k8l" id="LlW-0m-1a6"/>
+                        <outlet property="secondSharedUsersLabel" destination="zMi-0r-REc" id="lij-hZ-6t4"/>
+                        <outlet property="thirdSharedUsersLabel" destination="DEg-Vd-8UK" id="0hQ-pq-KfB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4fZ-MW-awJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1955" y="-265"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="5bj-5C-dYj">
@@ -502,12 +621,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9D-Fh-bfY" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-234" y="97"/>
+            <point key="canvasLocation" x="-553" y="-244"/>
         </scene>
     </scenes>
     <resources>
         <image name="list.bullet" catalog="system" width="128" height="87"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
+        <image name="shareplay" catalog="system" width="128" height="75"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

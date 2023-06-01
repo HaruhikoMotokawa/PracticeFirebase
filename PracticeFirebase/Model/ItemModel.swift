@@ -14,4 +14,8 @@ struct ItemModel: Codable {
     var name: String
     var number: String
     var unit: String
+
+    var owner: String
+    var sharedUsers: [String]?
 }
+

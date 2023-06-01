@@ -41,9 +41,12 @@ class ListViewController: UIViewController {
                             return ItemModel(id: item.documentID,
                                              name: data["name"] as? String ?? "",
                                              number: data["number"] as? String ?? "",
-                                             unit: data["unit"] as? String ?? "")
+                                             unit: data["unit"] as? String ?? "",
+                                             owner: data["owner"] as? String ?? "")
+
                         }
                         sSelf.itemList.reloadData()
+                        print("再読み込み")
                     } else {
                         print("現在データはありません")
                     }

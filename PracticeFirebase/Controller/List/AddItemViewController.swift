@@ -28,12 +28,16 @@ class AddItemViewController: UIViewController {
     @IBAction func addItem(_ sender: Any) {
         guard (UIDevice.current.identifierForVendor?.uuidString) != nil else { return }
 
+
         if let user = Auth.auth().currentUser {
             Firestore.firestore().collection("shoppingItem").addDocument(data: [
                 "name": nameTextField.text ?? "",
                 "number": numberTextField.text ?? "",
                 "unit": unitTextField.text ?? "",
-                "user": user.uid,
+                "owner": user.uid,
+                // ここにsharedUsersを入れる
+                // まずは別のところでusersにアクセスしてsharedUsersを定数に入れて
+                // その定数をここで代入する
                 "date": Date()
             ]) { error in
                 DispatchQueue.main.async {
