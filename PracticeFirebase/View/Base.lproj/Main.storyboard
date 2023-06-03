@@ -530,6 +530,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="共有相手登録" image="shareplay" catalog="system" selectedImage="shareplay" id="xeg-UZ-sBw"/>
                     <connections>
+                        <outlet property="addSharedUsersButton" destination="eCU-2w-mxY" id="wdx-qc-yM8"/>
                         <outlet property="deleteOneButton" destination="wXv-ir-StT" id="87h-67-E8p"/>
                         <outlet property="deleteThreeButton" destination="EP4-zE-0Y8" id="wS0-rD-Z5X"/>
                         <outlet property="deleteTwoButton" destination="etw-S3-HSj" id="Heg-RW-5mE"/>
