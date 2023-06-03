@@ -19,6 +19,12 @@ class SharedUsersViewController: UIViewController {
 
     @IBOutlet weak var thirdSharedUsersLabel: UILabel!
 
+    @IBOutlet weak var deleteOneButton: UIButton!
+
+    @IBOutlet weak var deleteTwoButton: UIButton!
+
+    @IBOutlet weak var deleteThreeButton: UIButton!
+
     @IBOutlet weak var inputUIDTextField: UITextField!
 
 
@@ -31,7 +37,11 @@ class SharedUsersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         closeKeyboard()
+        deleteOneButton.isEnabled = false
+        deleteTwoButton.isEnabled = false
+        deleteThreeButton.isEnabled = false
     }
+
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -48,8 +58,31 @@ class SharedUsersViewController: UIViewController {
         usersListener?.remove()
     }
 
+    @IBAction func deletedSharedUIDOne(_ sender: Any) {
+        deletedSharedUID(deleteNumber: 0)
+        deleteOneButton.isEnabled = false
+    }
+
+    @IBAction func deletedSharedUIDTwo(_ sender: Any) {
+        deletedSharedUID(deleteNumber: 1)
+        deleteTwoButton.isEnabled = false
+    }
+
+    @IBAction func deletedSharedUIDThree(_ sender: Any) {
+        deletedSharedUID(deleteNumber: 2)
+        deleteThreeButton.isEnabled = false
+    }
+
     @IBAction func addSharedUsers(_ sender: Any) {
-        guard let uid = Auth.auth().currentUser?.uid, let inputUID = inputUIDTextField.text else { return }
+        print("ボタンが押されて処理が開始されました")
+        guard inputUIDTextField.text != "" else {
+            print("uidがからです")
+            return
+        }
+        guard let uid = Auth.auth().currentUser?.uid, let inputUID = inputUIDTextField.text else {
+            print("追加できません、ログインしてください")
+            return
+        }
         let usersRef = Firestore.firestore().collection("users")
         let inputUserQuery = usersRef.whereField(FieldPath.documentID(), isEqualTo: inputUID)
 
@@ -57,7 +90,7 @@ class SharedUsersViewController: UIViewController {
             // selfをweakでキャプチャしているため、selfの値が解放された後のアクセスを防ぐ
             guard let sSelf = self else { return }
             if error != nil {
-                print("エラー: \\\\(error.localizedDescription)")
+                print("エラー")
                 return
             }
             guard let doc = querySnapshot?.documents.first else {
@@ -65,16 +98,14 @@ class SharedUsersViewController: UIViewController {
                 return
             }
             sSelf.sharedUsers = doc.data()["sharedUsers"] as? [String] ?? []
-            if sSelf.sharedUsers.contains(inputUID) {
-                sSelf.sharedUsers.append(inputUID)
 
-                let userRef = usersRef.document(uid)
-                userRef.updateData(["sharedUsers": sSelf.sharedUsers]) { err in
-                    if err != nil {
-                        print("登録できませんでした")
-                    } else {
-                        print("登録成功だよ")
-                    }
+            let userRef = usersRef.document(uid)
+            userRef.updateData(["sharedUsers": FieldValue.arrayUnion(sSelf.sharedUsers)]) { err in
+                if err != nil {
+                    print("登録できませんでした")
+                } else {
+                    print("登録成功だよ")
+                    sSelf.inputUIDTextField.text = ""
                 }
             }
         }
@@ -127,12 +158,15 @@ class SharedUsersViewController: UIViewController {
                     let sharedUsers = data["sharedUsers"] as? [String] ?? []
                     if sharedUsers.count >= 1 {
                         sSelf.firstSharedUsersLabel.text = sharedUsers[0]
+                        sSelf.deleteOneButton.isEnabled = true
                     }
                     if sharedUsers.count >= 2 {
                         sSelf.secondSharedUsersLabel.text = sharedUsers[1]
+                        sSelf.deleteTwoButton.isEnabled = true
                     }
                     if sharedUsers.count >= 3 {
                         sSelf.thirdSharedUsersLabel.text = sharedUsers[2]
+                        sSelf.deleteThreeButton.isEnabled = true
                     }
                         print("再読み込み")
                     completion()
@@ -159,9 +193,26 @@ class SharedUsersViewController: UIViewController {
             if let documentSnapshot = documentSnapshot, documentSnapshot.exists {
                 // 取得したデータから"name"プロパティの値を取得する
                 let name = documentSnapshot.get("name") as! String
-
                 label.text = name
+            }
+        }
+    }
 
+    /// 共有アカウント登録の削除
+    /// 引数に削除する配列の番号を入力
+    func deletedSharedUID (deleteNumber: Int) {
+        // 現在ログインしているユーザーの「uid」をuidに宣言、ログインしていなければ抜ける
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        // usersコレクションの自分のドキュメントにアクセス
+        let docRef = Firestore.firestore().collection("users").document(uid)
+        // 値の追加
+        docRef.updateData([
+            "sharedUsers": FieldValue.arrayRemove([sharedUsers[deleteNumber]])
+        ]) { error in
+            if error != nil {
+                print("共有相手の削除に失敗")
+            } else {
+                print("共有相手の削除に成功")
             }
         }
     }

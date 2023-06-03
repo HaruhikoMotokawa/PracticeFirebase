@@ -73,7 +73,7 @@ class CreateUserViewController: UIViewController {
                 "name": userNameTextField.text ?? "",
                 "email": email.text ?? "",
                 "password": password.text ?? "",
-                "sharedUsers": [""],
+                "sharedUsers": [String](),
                 "date": Date()
 
             ],completion: { error in
