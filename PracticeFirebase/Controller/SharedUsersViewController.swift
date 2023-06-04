@@ -29,11 +29,11 @@ class SharedUsersViewController: UIViewController {
 
     @IBOutlet weak var addSharedUsersButton: UIButton!
 
+
     var usersListener: ListenerRegistration?
 
-    var usersList: [UserModel] = []
-
-
+    // FireStoreのsharedUsersの配列を保持するための変数
+    var sharedUsers: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,11 +99,6 @@ class SharedUsersViewController: UIViewController {
         }
     }
 
-
-    @IBAction func confirmationSharedUsers(_ sender: Any) {
-        changeUserName(sharedUsersUID: firstSharedUsersLabel?.text, label: firstSharedUsersLabel)
-    }
-
     // キーボード閉じるボタンセット
     func closeKeyboard() {
         //inputAccesoryViewに入れるtoolbar
@@ -138,31 +133,25 @@ class SharedUsersViewController: UIViewController {
                     sSelf.changeUserName(sharedUsersUID: sSelf.sharedUsers[0], label: sSelf.firstSharedUsersLabel)
                     sSelf.changeUserName(sharedUsersUID: nil, label: sSelf.secondSharedUsersLabel)
                     sSelf.changeUserName(sharedUsersUID: nil, label: sSelf.thirdSharedUsersLabel)
-                    sSelf.deleteOneButton.isEnabled = true
-                    sSelf.deleteTwoButton.isEnabled = false
-                    sSelf.deleteThreeButton.isEnabled = false
+
                 case 2:
                     sSelf.changeUserName(sharedUsersUID: sSelf.sharedUsers[0], label: sSelf.firstSharedUsersLabel)
                     sSelf.changeUserName(sharedUsersUID: sSelf.sharedUsers[1], label: sSelf.secondSharedUsersLabel)
                     sSelf.changeUserName(sharedUsersUID: nil, label: sSelf.thirdSharedUsersLabel)
-                    sSelf.deleteOneButton.isEnabled = true
-                    sSelf.deleteTwoButton.isEnabled = true
-                    sSelf.deleteThreeButton.isEnabled = false
+
                 case 3:
                     sSelf.changeUserName(sharedUsersUID: sSelf.sharedUsers[0], label: sSelf.firstSharedUsersLabel)
                     sSelf.changeUserName(sharedUsersUID: sSelf.sharedUsers[1], label: sSelf.secondSharedUsersLabel)
                     sSelf.changeUserName(sharedUsersUID: sSelf.sharedUsers[2], label: sSelf.thirdSharedUsersLabel)
-                    sSelf.deleteOneButton.isEnabled = true
-                    sSelf.deleteTwoButton.isEnabled = true
-                    sSelf.deleteThreeButton.isEnabled = true
+
                 default:
                     sSelf.changeUserName(sharedUsersUID: nil, label: sSelf.firstSharedUsersLabel)
                     sSelf.changeUserName(sharedUsersUID: nil, label: sSelf.secondSharedUsersLabel)
                     sSelf.changeUserName(sharedUsersUID: nil, label: sSelf.thirdSharedUsersLabel)
-                    sSelf.deleteOneButton.isEnabled = false
-                    sSelf.deleteTwoButton.isEnabled = false
-                    sSelf.deleteThreeButton.isEnabled = false
             }
+            sSelf.deleteOneButton.isEnabled = sSelf.sharedUsers.count >= 1
+            sSelf.deleteTwoButton.isEnabled = sSelf.sharedUsers.count >= 2
+            sSelf.deleteThreeButton.isEnabled = sSelf.sharedUsers.count >= 3
         })
     }
 
@@ -213,9 +202,6 @@ class SharedUsersViewController: UIViewController {
             }
         }
     }
-
-    // FireStoreのsharedUsersの配列を保持するための変数
-    var sharedUsers: [String] = []
 
     /// 共有アカウント登録の削除メソッド、引数に
     /// 引数に削除する配列の番号を入力

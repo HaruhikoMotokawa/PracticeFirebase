@@ -410,22 +410,22 @@
                                 <rect key="frame" x="10" y="109" width="373" height="310"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="C13-Uc-t2h" userLabel="シェア１">
-                                        <rect key="frame" x="0.0" y="0.0" width="373" height="20.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="34.333333333333336"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="シェア１" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LD2-Ce-PKE">
-                                                <rect key="frame" x="0.0" y="0.0" width="170.33333333333334" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="170.33333333333334" height="34.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在登録なし" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKI-eF-JKq">
-                                                <rect key="frame" x="190.33333333333334" y="0.0" width="104.00000000000003" height="20.333333333333332"/>
+                                                <rect key="frame" x="190.33333333333334" y="0.0" width="104.00000000000003" height="34.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXv-ir-StT">
-                                                <rect key="frame" x="314.33333333333331" y="0.0" width="58.666666666666686" height="20.333333333333332"/>
+                                                <rect key="frame" x="314.33333333333331" y="0.0" width="58.666666666666686" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="gray" title="削除"/>
                                                 <connections>
@@ -435,22 +435,22 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1s5-EU-Ywa" userLabel="シェア２">
-                                        <rect key="frame" x="0.0" y="50.333333333333343" width="373" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="64.333333333333343" width="373" height="34.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="シェア２" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kng-8H-c0M">
-                                                <rect key="frame" x="0.0" y="0.0" width="170.33333333333334" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="170.33333333333334" height="34.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在登録なし" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMi-0r-REc">
-                                                <rect key="frame" x="190.33333333333334" y="0.0" width="104.00000000000003" height="20.333333333333332"/>
+                                                <rect key="frame" x="190.33333333333334" y="0.0" width="104.00000000000003" height="34.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etw-S3-HSj">
-                                                <rect key="frame" x="314.33333333333331" y="0.0" width="58.666666666666686" height="20.333333333333332"/>
+                                                <rect key="frame" x="314.33333333333331" y="0.0" width="58.666666666666686" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="gray" title="削除"/>
                                                 <connections>
@@ -460,22 +460,22 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hmp-0Q-VqO" userLabel="シェア３">
-                                        <rect key="frame" x="0.0" y="100.66666666666666" width="373" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="128.66666666666666" width="373" height="34.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="シェア３" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSN-cY-B28">
-                                                <rect key="frame" x="0.0" y="0.0" width="170.33333333333334" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="170.33333333333334" height="34.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在登録なし" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEg-Vd-8UK">
-                                                <rect key="frame" x="190.33333333333334" y="0.0" width="104.00000000000003" height="20.333333333333332"/>
+                                                <rect key="frame" x="190.33333333333334" y="0.0" width="104.00000000000003" height="34.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EP4-zE-0Y8">
-                                                <rect key="frame" x="314.33333333333331" y="0.0" width="58.666666666666686" height="20.333333333333332"/>
+                                                <rect key="frame" x="314.33333333333331" y="0.0" width="58.666666666666686" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="gray" title="削除"/>
                                                 <connections>
@@ -485,35 +485,27 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8yg-4H-V6d" userLabel="入力">
-                                        <rect key="frame" x="0.0" y="151" width="373" height="30.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="193" width="373" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UID入力" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92M-Jh-vSm">
-                                                <rect key="frame" x="0.0" y="0.0" width="63" height="30.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="63" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Grc-aT-k8l">
-                                                <rect key="frame" x="83" y="0.0" width="290" height="30.333333333333332"/>
+                                                <rect key="frame" x="83" y="0.0" width="290" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCU-2w-mxY">
-                                        <rect key="frame" x="0.0" y="211.33333333333331" width="373" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="257" width="373" height="53"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="追加"/>
                                         <connections>
                                             <action selector="addSharedUsers:" destination="fMm-NB-dAO" eventType="touchUpInside" id="sv3-5v-miW"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1X-0O-D1W">
-                                        <rect key="frame" x="0.0" y="275.66666666666669" width="373" height="34.333333333333314"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="共有相手確認"/>
-                                        <connections>
-                                            <action selector="confirmationSharedUsers:" destination="fMm-NB-dAO" eventType="touchUpInside" id="GWF-Pl-npW"/>
                                         </connections>
                                     </button>
                                 </subviews>
