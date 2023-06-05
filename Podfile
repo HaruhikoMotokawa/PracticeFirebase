@@ -8,7 +8,7 @@ target 'PracticeFirebase' do
 pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
 pod 'FirebaseAnalytics'
-
+pod 'FirebaseFirestoreSwift'
 
   # Pods for PracticeFirebase
 
