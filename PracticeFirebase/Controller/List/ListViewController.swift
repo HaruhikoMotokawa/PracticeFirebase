@@ -59,6 +59,9 @@ class ListViewController: UIViewController {
                           forCellReuseIdentifier: "CustomTableViewCell")
     }
     /// 自分が作成したドキュメントをFireStoreから取得して配列に保持するメソッド
+    /// - 認証確認
+    /// - データをItemModelの配列にマッピング
+    /// - tableViewをリロード
     func getMyShoppingItem() {
         // ユーザーがログインしているかチェック
         guard Auth.auth().currentUser != nil else { return }
